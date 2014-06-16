@@ -1,4 +1,43 @@
 FixeddepositApp::Application.routes.draw do
+
+root to: 'fixeddeposits#index'
+  
+  get "interestrates/new"
+
+  get "interestrates/create"
+
+  get "interestrates/index"
+
+  get "interestrates/show"
+
+  get "interestrates/update"
+
+  get "interestrates/destroy"
+
+  get "interestsetups/new"
+
+  get "interestsetups/create"
+
+  get "interestsetups/index"
+
+  get "interestsetups/show"
+
+  get "interestsetups/update"
+
+  get "interestsetups/destroy"
+
+  get "fixeddeposits/new"
+
+  get "fixeddeposits/create"
+
+  get "fixeddeposits/index"
+
+  get "fixeddeposits/show"
+
+  get "fixeddeposits/update"
+
+  get "fixeddeposits/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
