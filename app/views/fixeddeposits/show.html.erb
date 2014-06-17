@@ -1,2 +1,59 @@
-<h1>Fixeddeposits#show</h1>
-<p>Find me in app/views/fixeddeposits/show.html.erb</p>
+<h1><%= link_to "Fixed Deposit", fixeddeposits_path %></h1>
+<br />
+<div class="hero-unit">
+<h5><strong>Customer Name</strong> : <%= @fixeddeposit.customername %></h5>
+<h5><strong>Age</strong> : <%= @fixeddeposit.age %></h5>
+
+
+<hr>
+   
+<div class="row">
+   <div class="span6 customer_left_span_properties">
+   <h4><span class="customer">Account details</span></h4>
+   <div class="row">
+   <div class="span3">
+   <strong>Opened On</strong>
+   </div>
+   <div class="span3"> : <%= @fixeddeposit.openedon.strftime("%d/%m/%Y") %></div>
+   </div>
+   
+   <div class="row">
+   <div class="span3">
+   <strong>Deposit Amount</strong>
+   </div>
+   <div class="span3"> : <%= @fixeddeposit.depositamount %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>Periods</strong>
+   </div>
+   <div class="span3"> : <%= @fixeddeposit.periods %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">
+   <strong>Rate Of Interest</strong>
+   </div>
+   <div class="span3"> : <%= @fixeddeposit.rateofinterest %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>Monthly Interest</strong>
+   </div>
+   <div class="span3"> : <%= @fixeddeposit.interestamount %></div>
+   </div>
+  
+   <div class="row">
+   <div class="span3">
+   <strong>Maturity Date</strong>
+   </div>
+   <div class="span3"> : <%= @fixeddeposit.maturitydate.strftime("%d/%m/%Y") %></div>
+   </div>
+   </div>
+   </div>
+   </div>
+</hr>
+</div>
+</div>

@@ -1,5 +1,11 @@
 FixeddepositApp::Application.routes.draw do
 
+  resources :fixeddeposits
+
+  resources :interestrates
+
+  resources :interestsetups
+
 root to: 'fixeddeposits#index'
   
   get "interestrates/new"
