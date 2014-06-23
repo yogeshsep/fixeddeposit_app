@@ -1,2 +1,26 @@
-<h1>Interestsetups#index</h1>
-<p>Find me in app/views/interestsetups/index.html.erb</p>
+
+<h1>Fixed Deposit Setup </h1>
+
+<table cellpadding = "5" cellspacing ="5" >
+  <h3>Interest Rate</h3>
+  <tr>            
+    <th>Days From</th>
+    <th>Days To</th>    
+    <th>Rate</th> 
+    <th>Senior Increment</th>
+    <th>Super Senior Increment  </th>     
+    <th>Widow Increment</th>
+  </tr>
+<% @interestsetup.each do |is| %>
+    <tr>                
+      <td><%=  %></td>
+      <td><%=  %></td>  
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <% end %></td>         
+    </tr>  
+</table>
+<br/>
+

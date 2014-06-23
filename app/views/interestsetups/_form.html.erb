@@ -1,0 +1,71 @@
+
+<%= form_for @interestsetup do |f| %>  
+ 
+<% if @interestsetup.errors.any? %>
+<h4>Couldn't create Interest Rates</h4>
+<ul>
+<% @interestsetup.errors.full_messages.each do |error| %>
+<li><%= error %></li>
+<% end %>
+</ul>
+<% end %>
+
+    <%= f.label :effectivefrom %>
+    <%= f.date_select :effectivefrom, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
+
+    <%= f.label :effectiveto %>
+    <%= f.date_select :effectiveto, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
+
+    <h3>Interest Rates</h3>
+<table class='table condensed-table'>
+<tr>
+<td>
+Days From
+</td>
+<td>
+Days To
+</td>
+<td>
+Rate
+</td>
+<td>
+Senior Increment
+</td>
+<td>
+Super Senior Increment
+</td>
+<td>
+Widow Increment
+</td>
+</tr>
+<tr>
+<td>
+<input id="td_interest_setup_attributes_0_days_from" name="td_interest[setup_attributes][0][days_from]" style="width:5em" type="number" />
+</td>
+<td>
+<input id="td_interest_setup_attributes_0_days_to" name="td_interest[setup_attributes][0][days_to]" style="width:5em" type="number" />
+</td>
+<td>
+<input id="td_interest_setup_attributes_0_rate" name="td_interest[setup_attributes][0][rate]" size="30" style="width:8em" type="text" />
+</td>
+<td>
+<input id="td_interest_setup_attributes_0_senior_increment" name="td_interest[setup_attributes][0][senior_increment]" size="30" style="width:8em" type="text" />
+</td>
+<td>
+<input id="td_interest_setup_attributes_0_super_senior_increment" name="td_interest[setup_attributes][0][super_senior_increment]" size="30" style="width:8em" type="text" />
+</td>
+<td>
+<input id="td_interest_setup_attributes_0_widow_increment" name="td_interest[setup_attributes][0][widow_increment]" size="30" style="width:8em" type="text" />
+</td>
+</tr>
+</table>
+
+  <div>    
+  </div>
+    <%= f.submit "Open FD", class: "btn btn-primary" %>     
+    <% end %>
+  </div>
+</div>
+
+
+
