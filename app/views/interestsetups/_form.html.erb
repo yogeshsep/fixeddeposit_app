@@ -17,48 +17,28 @@
     <%= f.date_select :effectiveto, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
 
     <h3>Interest Rates</h3>
-<table class='table condensed-table'>
-<tr>
-<td>
-Days From
-</td>
-<td>
-Days To
-</td>
-<td>
-Rate
-</td>
-<td>
-Senior Increment
-</td>
-<td>
-Super Senior Increment
-</td>
-<td>
-Widow Increment
-</td>
-</tr>
-<tr>
-<td>
-<input id="td_interest_setup_attributes_0_days_from" name="td_interest[setup_attributes][0][days_from]" style="width:5em" type="number" />
-</td>
-<td>
-<input id="td_interest_setup_attributes_0_days_to" name="td_interest[setup_attributes][0][days_to]" style="width:5em" type="number" />
-</td>
-<td>
-<input id="td_interest_setup_attributes_0_rate" name="td_interest[setup_attributes][0][rate]" size="30" style="width:8em" type="text" />
-</td>
-<td>
-<input id="td_interest_setup_attributes_0_senior_increment" name="td_interest[setup_attributes][0][senior_increment]" size="30" style="width:8em" type="text" />
-</td>
-<td>
-<input id="td_interest_setup_attributes_0_super_senior_increment" name="td_interest[setup_attributes][0][super_senior_increment]" size="30" style="width:8em" type="text" />
-</td>
-<td>
-<input id="td_interest_setup_attributes_0_widow_increment" name="td_interest[setup_attributes][0][widow_increment]" size="30" style="width:8em" type="text" />
-</td>
-</tr>
-</table>
+
+    <%= f.fields_for :interestrates do |ir| %>
+
+    <%= ir.label :dayfrom %>
+    <%= ir.text_field :dayfrom %>
+
+    <%= ir.label :dayto %>
+    <%= ir.text_field :dayto %>
+
+    <%= ir.label :Rate %>
+    <%= ir.text_field :rate %>
+
+    <%= ir.label :Senior_Increment %>
+    <%= ir.text_field :seniorincrement %> 
+  
+    <%= ir.label :Super_Senior_Increment %>
+    <%= ir.text_field :superseniorincrement %>
+
+    <%= ir.label :Widow_Increment %>
+    <%= ir.text_field :widowincrement %>
+
+    <% end %>
 
   <div>    
   </div>

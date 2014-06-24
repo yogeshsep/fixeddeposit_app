@@ -38,13 +38,7 @@ before_save :calculate_maturitydate
       :in => Date.civil(1900, 1, 1)..Date.today,
       :message => "Must be between 1900 and now"   
 
-  validates :address, presence: true    
-
-  validates :city, presence: true  
-
-  validates :gender, presence: true    
-
-  validates :depositamount, presence: true
+  validates :address, :city, :gender, :depositamount, presence: true
 
 end
 

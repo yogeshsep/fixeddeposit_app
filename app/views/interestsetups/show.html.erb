@@ -1,0 +1,32 @@
+
+<h1><%= link_to "Interest Setup", interestsetups_new_path, class: "btn btn-primary" %></h1>
+
+
+<h5><strong>Effective From</strong> : <%= @interestsetup.effectivefrom %></h5>
+<h5><strong>Effective To</strong> : <%= @interestsetup.effectiveto %></h5>
+
+
+
+
+<table cellpadding = "5" cellspacing ="5" >
+  <tr>            
+    <th>Days From</th>
+    <th>Days To</th>    
+    <th>Rate</th> 
+    <th>Senior Increment</th>
+    <th>Super Senior Increment</th>     
+    <th>Widow Increment</th>     
+  </tr>
+  <% @interestsetup.interestrates.each do |irs| %>
+    <tr>                
+      <td><%= irs.dayfrom %></td>
+      <td><%= irs.dayto %></td>  
+      <td><%= irs.rate %>%</td>
+      <td><%= irs.seniorincrement %>%</td>
+      <td><%= irs.superseniorincrement %>%</td>
+      <td><%= irs.widowincrement %>%</td>      
+      </td>  
+      <% end %>       
+    </tr>  
+</table>
+<br/>

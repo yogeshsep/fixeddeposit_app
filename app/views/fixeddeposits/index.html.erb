@@ -1,7 +1,9 @@
 <h2>Fixed Deposit </h2>
 
 <div> 
-  <%= link_to "Open FD Account", fixeddeposits_new_path, class: "btn btn-primary" %> </div>
+  <%= link_to "Open FD Account", fixeddeposits_new_path, class: "btn btn-primary" %> 
+  <%= link_to "Interest Setup", interestsetups_new_path, class: "btn btn-primary" %> 
+</div>
 </br>
 
 <h6 class= "alert alert-info"><%= page_entries_info @fixeddeposit %></h6>
@@ -19,14 +21,14 @@
   </tr>
   <% @fixeddeposit.each do |f| %>
     <tr>                
-      <td><%= f.openedon %></td>
+      <td><%= f.openedon.strftime("%d/%m/%Y") %></td>
       <td><%= link_to f.customername, fixeddeposit_path(f) %></td>  
       <td><%= f.depositamount %></td>
       <td><%= f.age %></td>
       <td><%= f.rateofinterest %>%</td>
       <td><%= f.periods %></td>
       <td><%= f.interestamount %></td>
-      <td><%= f.maturitydate %></td>      
+      <td><%= f.maturitydate.strftime("%d/%m/%Y") %></td>      
       <% end %></td>         
     </tr>  
 </table>
