@@ -1,6 +1,6 @@
 class InterestratesController < ApplicationController
   def new
-    @interestrate = Interestrate.new
+    @interestrate = Interestrate.new    
   end
 
   def create

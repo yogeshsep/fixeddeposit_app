@@ -10,7 +10,7 @@
 </ul>
 <% end %>
 
-    <%= f.label :effectivefrom %>
+    <%= f.label :effectivefrom, class:'required' %>
     <%= f.date_select :effectivefrom, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
 
     <%= f.label :effectiveto %>
@@ -41,40 +41,40 @@ Widow Increment
 </td>
 </tr>
 <tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini' %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini' %></td>
+<td><%= ir.text_field :dayfrom, :class => 'input-mini', type: "number" %></td>
+<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
 <td><%= ir.text_field :rate, :class => 'input-mini' %></td>
 <td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
 </tr>
 <tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini' %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini' %></td>
+<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
+<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
 <td><%= ir.text_field :rate, :class => 'input-mini' %></td>
 <td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
 </tr>
 <tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini' %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini' %></td>
+<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
+<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
 <td><%= ir.text_field :rate, :class => 'input-mini' %></td>
 <td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
 </tr>
 <tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini' %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini' %></td>
+<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
+<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
 <td><%= ir.text_field :rate, :class => 'input-mini' %></td>
 <td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
 </tr>
 <tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini' %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini' %></td>
+<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
+<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
 <td><%= ir.text_field :rate, :class => 'input-mini' %></td>
 <td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
