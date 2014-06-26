@@ -18,7 +18,8 @@
 
     
 <h3>Interest Rates</h3>
-<%= f.fields_for :interestrates do |ir| %>
+<% (1..5).each do |num| %>
+    <%= f.fields_for "interestrates_attributes[#{num}]" do |ir| %>
 <table class='table condensed-table'>
 <tr>
 <td>
@@ -42,46 +43,14 @@ Widow Increment
 </tr>
 <tr>
 <td><%= ir.text_field :dayfrom, :class => 'input-mini', type: "number" %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
+<td><%= ir.text_field :dayto, :class => 'input-mini', type: "number" %></td>
 <td><%= ir.text_field :rate, :class => 'input-mini' %></td>
 <td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
 <td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
 </tr>
-<tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :rate, :class => 'input-mini' %></td>
-<td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
-</tr>
-<tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :rate, :class => 'input-mini' %></td>
-<td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
-</tr>
-<tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :rate, :class => 'input-mini' %></td>
-<td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
-</tr>
-<tr>
-<td><%= ir.text_field :dayfrom, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :dayto, :class => 'input-mini',  type: "number" %></td>
-<td><%= ir.text_field :rate, :class => 'input-mini' %></td>
-<td><%= ir.text_field :seniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :superseniorincrement, :class => 'input-mini' %></td>
-<td><%= ir.text_field :widowincrement, :class => 'input-mini' %></td>
-</tr>
-
 </table>
+<%end%>
 <% end %>
   <div>    
   </div>
@@ -89,6 +58,3 @@ Widow Increment
     <% end %>
   </div>
 </div>
-
-
-

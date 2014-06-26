@@ -5,9 +5,9 @@ class FixeddepositsController < ApplicationController
 
   def create
     @fixeddeposit =Fixeddeposit.new(params[:fixeddeposit])
-    if @fixeddeposit.save
-      flash[:success] = "FD Account Opened Successfully!"
+    if @fixeddeposit.save      
       redirect_to fixeddeposits_path
+      flash.now[:success] = "FD Account Opened Successfully!"
     else
       flash[:error] = "Couldn't Open FD"  
       render  'new'
@@ -29,9 +29,9 @@ class FixeddepositsController < ApplicationController
   def update
     @fixeddeposit = Fixeddeposit.find(params[:id])
 
-      if @fixeddeposit.update_attributes(params[:fixeddeposit])
-        flash[:success] = "Updated your FD Account"
+      if @fixeddeposit.update_attributes(params[:fixeddeposit])        
         redirect_to fixeddeposits_path(@fixeddeposit)
+        flash.now[:success] = "Updated your FD Account"
       else
         flash[:alert] ="Fill the necessary fields"
         render 'edit'
@@ -40,8 +40,8 @@ class FixeddepositsController < ApplicationController
 
   def destroy
     @fixeddeposit = Fixeddeposit.find(params[:id])
-    @fixeddeposit.destroy
-    flash[:notice] = "Your FD Account Get Deleted"
+    @fixeddeposit.destroy    
     redirect_to fixeddeposits_path
+    flash.now[:notice] = "Your FD Account Get Deleted"
   end
 end
