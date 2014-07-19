@@ -26,4 +26,6 @@ $(document).on("change","#fixeddeposit_periods",function(){
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require_tree .
+//= require jquery-ui
