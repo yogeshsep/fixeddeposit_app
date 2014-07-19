@@ -1,3 +1,17 @@
+
+
+$(document).on("change","#fixeddeposit_periods",function(){
+  var periods = $(this).val();
+  var dateofbirth = $("#fixeddeposit_dateofbirth").val();
+  $.ajax({
+    type: "POST",
+    url: "/rateofinterest",
+    data: { periods: periods, dateofbirth: dateofbirth }
+  });
+});
+
+
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

@@ -9,35 +9,33 @@
 <% end %>
 </ul>
 <% end %>
-    <%= f.label :customer_name %>
+    <%= f.label :customer_name, class:'required' %>
     <%= f.text_field :customername, :placeholder =>'Name' %>
 
-    <%= f.label :date_of_birth %>
-    <%= f.date_select :dateofbirth, { :include_blank => true, :start_year => 1900, :end_year => 2014 } %>
+    <%= f.label :date_of_birth, class:'required' %>
+    <%= f.date_select :dateofbirth, { :include_blank => true, :start_year => 1900, :end_year => 2014 }, :id => "dateofbirth" %>
    
-    <%= f.label :gender %>
+    <%= f.label :gender, class:'required' %>
     <%= f.select :gender, options_for_select(%w[Male Female]), { :include_blank => true} %>
 
-    <%= f.label :address %>
+    <%= f.label :address, class:'required' %>
     <%= f.text_area :address, :id => "address", :cols => 5, :rows => 3 %>
 
-    <%= f.label :city %>
+    <%= f.label :city, class:'required' %>
     <%= f.text_field :city, :placeholder =>'City' %>   
 
-    <%= f.label :deposit_amount %>
+    <%= f.label :deposit_amount, class:'required' %>
     <%= f.text_field :depositamount, :placeholder =>'0.00' %>
    
     <%= f.label :opened_on %>
-    <%= f.text_field :openedon, :disabled => true, :value => Date.today.strftime("%d/%m/%Y") %>
+    <%= f.text_field :openedon, :disabled => true, :value => Date.today.strftime("%d/%m/%Y"), :class => 'input-medium' %>
 
-    <%= f.label :Periods %>
-    <%= f.select :periods, options_for_select(%w[12Months 24Months 36Months 48Months 60Months]), { :include_blank => true} %>
+    <%= f.label :Periods, class:'required' %>
+    <input type="number" name="fixeddeposit[periods]" id="fixeddeposit_periods" placeholder="Days" class="input-mini">
 
     <%= f.label :Rate_Of_Interest %>
-    <%= f.text_field :rateofinterest, :disabled => true %>
+    <%= f.text_field :rateofinterest, :id => "rateofinterest", :value => "", :disabled => true, :class => 'input-medium' %>
     <span class="help-block">auto-generated</span>
-
-
 
 <div>      
   </div>

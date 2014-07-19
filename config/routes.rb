@@ -1,10 +1,14 @@
 FixeddepositApp::Application.routes.draw do
 
-  resources :fixeddeposits
+  resources :interestsetups
 
   resources :interestrates
 
-  resources :interestsetups
+  resources :fixeddeposits do
+    resources :interestrates
+  end
+
+post "/rateofinterest" => "fixeddeposits#calculate_rateofinterest" , as: "calculate_rateofinterest"
 
 root to: 'fixeddeposits#index'
   

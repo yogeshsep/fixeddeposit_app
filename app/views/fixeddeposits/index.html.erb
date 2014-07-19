@@ -1,4 +1,3 @@
-<h2>Fixed Deposit </h2>
 
 <div> 
   <%= link_to "Open FD Account", fixeddeposits_new_path, class: "btn btn-primary" %> 
@@ -15,12 +14,12 @@
     <th>Deposit Amount</th> 
     <th>Customer Age</th>
     <th>Rate Of Interest</th>     
-    <th>Periods(In Months)</th>
+    <th>Periods(In Days)</th>
     <th>Monthly Interest</th>
     <th>Maturity Date</th>       
   </tr>
   <% @fixeddeposit.each do |f| %>
-    <tr>                
+    <tr class="<%= cycle('oddrow', 'evenrow') -%>">                
       <td><%= f.openedon.strftime("%d/%m/%Y") %></td>
       <td><%= link_to f.customername, fixeddeposit_path(f) %></td>  
       <td><%= f.depositamount %></td>

@@ -3,12 +3,22 @@
 <head>
   <title>FixeddepositApp</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>  
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag :defaults %>
 </head>
 <body>
+ <div id="header">
+    <%= render 'layouts/header' %>
+    </div>
+      <div class="container">
+      <% flash.each do |key, value| %>
+        <br /><br />
+      <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+          <div id="footer">
 
-<%= yield %>
-
+      </div></div>
 </body>
 </html>

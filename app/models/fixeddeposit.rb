@@ -7,27 +7,34 @@ before_save :set_openedon
     self.openedon = Date.today.strftime("%d/%m/%Y")
   end  
 
-before_save :calculate_age
-  def calculate_age
-    self.age = ((DateTime.now - self.dateofbirth)/365)
-  end
+#before_save :calculate_age
+  #def calculate_age
+    #self.age = ((DateTime.now - self.dateofbirth)/365)
+  #end
 
 before_save :calculate_maturitydate
   def calculate_maturitydate
     self.openedon = Date.today
      case self.periods
-      when 12
+      when 1..365
         self.maturitydate = self.openedon + 1.year
-      when 24
+      when 366..730
         self.maturitydate = self.openedon + 2.years
-      when 36
+      when 731..1095
         self.maturitydate = self.openedon + 3.years
-      when 48
+      when 1096..1460
         self.maturitydate = self.openedon + 4.years
+      when 1461..1825
+        self.maturitydate = self.openedon + 5.years
       else
-        self.maturitydate = self.openedon + 5.years      
+        self.maturitydate      
      end
   end
+
+  #before_save :calculate_interestamount
+  #def calculate_interestamount
+    #self.interestamount = ((self.depositamount.round * self.rateofinterest)/12).round
+  #end
 
 
   validates :customername, presence: true, format: { with: %r{^[A-Z][a-zA-Z\s]*} }

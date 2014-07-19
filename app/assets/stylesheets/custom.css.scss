@@ -34,7 +34,7 @@ textarea {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #A9A9A9;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -86,6 +86,14 @@ h1,h2,h3,h4,h5
 
 
 /* table */
+
+table tr.oddrow {
+    background-color: #f3f7f5;
+}
+
+table tr.evenrow {
+    background-color: #fffbf0;
+}
 
 th
 {
