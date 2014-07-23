@@ -4,7 +4,7 @@ FixeddepositApp::Application.routes.draw do
 
   resources :interestrates
 
-  resources :fixeddeposits do
+resources :fixeddeposits do
     resources :interestrates
   end
 

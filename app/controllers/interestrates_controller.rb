@@ -1,7 +1,4 @@
 class InterestratesController < ApplicationController
-
- before_filter :find_interestrate, :only => [:show, :edit, :update, :destroy]
-
   def new
     @interestrate = Interestrate.new    
   end
@@ -15,14 +12,16 @@ class InterestratesController < ApplicationController
     @interestrate = Interestrate.all
   end
 
+  def show
+    @interestrate = Interestrate.find(params[:id])
+  end
+
+  def edit    
+  end
+
   def update
   end
 
   def destroy
-  end
-
- protected    
-  def find_interestrate
-    @interestrate = Interestrate.find(params[:id])
   end
 end

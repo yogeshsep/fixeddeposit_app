@@ -3,7 +3,6 @@
   <%= link_to "Open FD Account", fixeddeposits_new_path, class: "btn btn-primary" %> 
   <%= link_to "Interest Setup", interestsetups_new_path, class: "btn btn-primary" %> 
 </div>
-</br>
 
 <h6 class= "alert alert-info"><%= page_entries_info @fixeddeposit %></h6>
 
@@ -28,7 +27,7 @@
       <td><%= f.periods %></td>
       <td><%= f.interestamount %></td>
       <td><%= f.maturitydate.strftime("%d/%m/%Y") %></td>      
-      <% end %></td>         
+      <% end %>       
     </tr>  
 </table>
 <br/>

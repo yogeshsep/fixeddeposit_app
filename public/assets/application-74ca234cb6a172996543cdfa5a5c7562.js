@@ -1,1 +1,0 @@
-$(document).on("change","#fixeddeposit_periods",function(){var a=$(this).val(),b=$("#fixeddeposit_dateofbirth").val();$.ajax({type:"POST",url:"/rateofinterest",data:{periods:a,dateofbirth:b}})});

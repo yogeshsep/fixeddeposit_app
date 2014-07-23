@@ -2,7 +2,7 @@
 
 $(document).on("change","#fixeddeposit_periods",function(){
   var periods = $(this).val();
-  var dateofbirth = $("#fixeddeposit_dateofbirth").val();
+  var dateofbirth = $("#dateofbirth").val();
   $.ajax({
     type: "POST",
     url: "/rateofinterest",
@@ -28,4 +28,3 @@ $(document).on("change","#fixeddeposit_periods",function(){
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-//= require jquery-ui

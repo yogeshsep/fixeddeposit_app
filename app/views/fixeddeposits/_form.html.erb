@@ -31,10 +31,10 @@
     <%= f.text_field :openedon, :disabled => true, :value => Date.today.strftime("%d/%m/%Y"), :class => 'input-medium' %>
 
     <%= f.label :Periods, class:'required' %>
-    <input type="number" name="fixeddeposit[periods]" id="fixeddeposit_periods" placeholder="Days" class="input-mini">
+    <%= f.number_field :periods, :id => "fixeddeposit_periods", :placeholder => "Days", :class => "input-mini" %>
 
     <%= f.label :Rate_Of_Interest %>
-    <%= f.text_field :rateofinterest, :id => "rateofinterest", :value => "", :disabled => true, :class => 'input-medium' %>
+    <%= f.text_field :rateofinterest, :id => "fixeddeposit_rateofinterest", :value => "", :disabled => true, :class => "input-medium" %>
     <span class="help-block">auto-generated</span>
 
 <div>      
@@ -43,6 +43,5 @@
     <% end %>
   </div>
 </div>
-
 
 
