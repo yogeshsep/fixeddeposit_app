@@ -8,7 +8,7 @@ resources :fixeddeposits do
     resources :interestrates
   end
 
-post "/rateofinterest" => "fixeddeposits#calculate_rateofinterest" , as: "calculate_rateofinterest"
+get "/rateofinterest" => "fixeddeposits#calculate_rateofinterest" , as: "calculate_rateofinterest"
 
 root to: 'fixeddeposits#index'
   

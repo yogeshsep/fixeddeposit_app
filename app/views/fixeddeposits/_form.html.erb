@@ -1,4 +1,20 @@
 
+<script>
+$(document).ready(function() {
+$("#periods").on("change", function() { 
+    $.ajax({
+        url      : '/calculate_rateofinterest',
+        dataType : 'json',
+        type     : "GET",
+        data     : {"rateofinterest": $(this).val() }
+        success  : function(data){
+           $("#interestrate_rate").val = data;
+        }
+    });
+});
+});
+</script>
+
 <%= form_for @fixeddeposit do |f| %>  
  
 <% if @fixeddeposit.errors.any? %>
@@ -22,13 +38,7 @@
     <%= f.text_area :address, :id => "address", :cols => 5, :rows => 3 %>
 
     <%= f.label :city, class:'required' %>
-    <%= f.text_field :city, :placeholder =>'City' %>   
-
-    <%= f.label :deposit_amount, class:'required' %>
-    <%= f.text_field :depositamount, :placeholder =>'0.00' %>
-   
-    <%= f.label :opened_on %>
-    <%= f.text_field :openedon, :disabled => true, :value => Date.today.strftime("%d/%m/%Y"), :class => 'input-medium' %>
+    <%= f.text_field :city, :placeholder =>'City' %>
 
     <%= f.label :Periods, class:'required' %>
     <%= f.number_field :periods, :id => "fixeddeposit_periods", :placeholder => "Days", :class => "input-mini" %>
@@ -37,6 +47,11 @@
     <%= f.text_field :rateofinterest, :id => "fixeddeposit_rateofinterest", :value => "", :disabled => true, :class => "input-medium" %>
     <span class="help-block">auto-generated</span>
 
+    <%= f.label :deposit_amount, class:'required' %>
+    <%= f.text_field :depositamount, :placeholder =>'0.00' %>
+   
+    <%= f.label :opened_on %>
+    <%= f.text_field :openedon, :disabled => true, :value => Date.today.strftime("%d/%m/%Y"), :class => 'input-medium' %>
 <div>      
   </div>
     <%= f.submit "Open FD", class: "btn btn-primary" %>     
