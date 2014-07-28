@@ -1,18 +1,19 @@
 
 <script>
-$(document).ready(function() {
-$("#periods").on("change", function() { 
+$(document).ready(function(){
+  $("#fixeddeposit_periods").click(function(){
     $.ajax({
         url      : '/calculate_rateofinterest',
         dataType : 'json',
         type     : "GET",
-        data     : {"rateofinterest": $(this).val() }
-        success  : function(data){
-           $("#interestrate_rate").val = data;
+        data     : {"rate": $(this).val() },
+        function(data){
+           $("#fixeddeposit_rateofinterest").val = data;
         }
     });
+  });
 });
-});
+
 </script>
 
 <%= form_for @fixeddeposit do |f| %>  

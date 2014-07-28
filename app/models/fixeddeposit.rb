@@ -7,10 +7,10 @@ before_save :set_openedon
     self.openedon = Date.today.strftime("%d/%m/%Y")
   end  
 
-#before_save :calculate_age
-  #def calculate_age
-    #self.age = ((DateTime.now - self.dateofbirth)/365)
-  #end
+before_save :calculate_age
+  def calculate_age
+    self.age = ((DateTime.now - self.dateofbirth)/365)
+  end
 
 before_save :calculate_maturitydate
   def calculate_maturitydate

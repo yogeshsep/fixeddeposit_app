@@ -45,10 +45,6 @@ class FixeddepositsController < ApplicationController
     redirect_to fixeddeposits_path
     flash.now[:notice] = "Your FD Account Get Deleted"
   end
-  
-  def calculate_age(dateofbirth)
-    @age = DateTime.now - dateofbirth/ 365
-  end
 
   def calculate_rateofinterest
     @periods = params[:periods]
