@@ -55,7 +55,7 @@ $(document).ready(function(){
     <%= f.text_field :openedon, :disabled => true, :value => Date.today.strftime("%d/%m/%Y"), :class => 'input-medium' %>
 <div>      
   </div>
-    <%= f.submit "Open FD", class: "btn btn-primary" %>     
+    <%= f.submit "Open FD", class: "btn btn-primary", data: {disable_with: "Opening..."} %>     
     <% end %>
   </div>
 </div>

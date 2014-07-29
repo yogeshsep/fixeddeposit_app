@@ -5,6 +5,7 @@ class FixeddepositsController < ApplicationController
   end
 
   def create
+    sleep 2
     @fixeddeposit =Fixeddeposit.new(params[:fixeddeposit])
     if @fixeddeposit.save      
       redirect_to fixeddeposits_path
