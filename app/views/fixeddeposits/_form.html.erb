@@ -3,12 +3,15 @@
 $(document).ready(function(){
   $("#fixeddeposit_periods").click(function(){
     $.ajax({
-        url      : '/calculate_rateofinterest',
+        url      : "calculate_rateofinterest.js.erb",
         dataType : 'json',
         type     : "GET",
         data     : {"rate": $(this).val() },
-        function(data){
-           $("#fixeddeposit_rateofinterest").val = data;
+        success  : function(data){
+           $("#interestrate_rate").val = data;
+        },
+        error    : function(){
+            alert("Please select the correct value");
         }
     });
   });
