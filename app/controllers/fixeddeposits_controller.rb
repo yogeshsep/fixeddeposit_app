@@ -49,19 +49,18 @@ class FixeddepositsController < ApplicationController
 
   def calculate_rateofinterest
     @periods = params[:periods]
-    @dateofbirth = params[:dateofbirth]
-    calculate_age(@dateofbirth)
+    @dateofbirth = params[:dateofbirth]   
     if @age >= 58 && @age < 75
-        @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.seniorincrement')
+        @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.rate, interestrates.seniorincrement')
       elsif @age >= 75
-        @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.superseniorincrement') 
+        @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.rate, interestrates.superseniorincrement') 
       else
         @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.rate')
       end
     respond_to do |format|
       format.html{ redirect_to fixeddeposits_path }    
-      format.js{}
-      format.json{}
+      format.js
+      format.json
     end
   end
 
