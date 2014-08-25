@@ -60,7 +60,6 @@ class FixeddepositsController < ApplicationController
     respond_to do |format|
       format.html{ redirect_to fixeddeposits_path }    
       format.js
-      format.json
     end
   end
 

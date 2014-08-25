@@ -12,7 +12,7 @@ background-size: 100%;
 $(document).ready(function(){
   $("#fixeddeposit_periods").click(function(){
     $.ajax({
-        url      : "calculate_rateofinterest.js.erb",
+        url      : "/calculate_rateofinterest",
         dataType : 'json',
         type     : "GET",
         data     : {"rate": $(this).val() },
@@ -25,8 +25,6 @@ $(document).ready(function(){
     });
   });
 });
-
-
 </script>
 
 <%= form_for @fixeddeposit do |f| %>  
