@@ -48,23 +48,19 @@ class FixeddepositsController < ApplicationController
   end
 
   def calculate_rateofinterest
-    respond_to do |format|
-      format.html do
-      render "index"
-      end
-      format.json do
-        interestrate = Interestrate.find_by_effectivefrom(params[:periods])
-        data = {}
-      if interestrate_rate.present?
-        data = {:rateofinterest => interestrate.rate}
+    @periods = params[:periods]
+    @dateofbirth = params[:dateofbirth]   
+    if @age >= 58 && @age < 75
+        @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.rate, interestrates.seniorincrement')
+      elsif @age >= 75
+        @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.rate, interestrates.superseniorincrement') 
       else
-        t1 = DateTime.strptime(params[:openedon], "%d-%m-%Y") 
-        t2 = DateTime.now
-        data = {:rateofinterest => (t2-t1).to_f*0.25}
+        @rateofinterest = Rateofinterest.select('interestrates.id, interestrates.rate')
       end
-        render :json => data
-      end
-    end 
+    respond_to do |format|
+      format.html{ redirect_to fixeddeposits_path }    
+      format.js
+    end
   end
 
 end

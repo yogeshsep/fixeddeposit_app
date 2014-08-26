@@ -1,20 +1,16 @@
-
-  $(document ).ready(function() {
-    $("#fixeddeposit_periods").click(function(){
-
+$(document).ready(function(){
+  $(".input-mini").click(function(){
+    $.ajax({
+        url      : "calculate_rateofinterest.js.erb",
+        dataType : 'json',
+        type     : "GET",
+        data     : {"rate": $(this).val() },
+        success  : function(data){
+           $("#interestrate_rate").val = data;
+        },
+        error    : function(data){
+            alert("Please select the correct value");
+        }
     });
   });
-  function fetchInterest(){
-    var openingDate = $("#openingDate").val();
-    $.ajax({
-        type: "GET",
-        url: "/fixed_deposits/get_interest_on_date.json",
-        data: { opening_date: openingDate }
-    })
-    .done(function( data ) {
-    $("#calculated_interest").val(data["interest"])
-    })
-    .fail(function() {
-    alert( "error" );
-    })
-  }
+});

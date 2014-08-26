@@ -14,7 +14,7 @@ background-size: 100%;
  
 <% if @fixeddeposit.errors.any? %>
 <div id="error_explanation">
-<h2><%= pluralize(@fixeddeposit.errors.count, "error") %> prohibited this fixeddeposit from being saved:</h2>
+<h3><%= pluralize(@fixeddeposit.errors.count, "error") %> prohibited this fixeddeposit from being saved:</h3>
 
 <ul>
 <% @fixeddeposit.errors.full_messages.each do |error| %>
