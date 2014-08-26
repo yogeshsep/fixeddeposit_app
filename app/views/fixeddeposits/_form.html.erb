@@ -8,34 +8,20 @@ background-size: 100%;
 }
 </style>
 
-<script>
-$(document).ready(function(){
-  $("#fixeddeposit_periods").click(function(){
-    $.ajax({
-        url      : "/calculate_rateofinterest",
-        dataType : 'json',
-        type     : "GET",
-        data     : {"rate": $(this).val() },
-        success  : function(data){
-           $("#interestrate_rate").val = data;
-        },
-        error    : function(){
-            alert("Select the correct value");
-        }
-    });
-  });
-});
-</script>
+
 
 <%= form_for @fixeddeposit do |f| %>  
  
 <% if @fixeddeposit.errors.any? %>
-<h4>Couldn't open FD Account</h4>
+<div id="error_explanation">
+<h2><%= pluralize(@fixeddeposit.errors.count, "error") %> prohibited this fixeddeposit from being saved:</h2>
+
 <ul>
 <% @fixeddeposit.errors.full_messages.each do |error| %>
 <li><%= error %></li>
 <% end %>
 </ul>
+</div>
 <% end %>
     <%= f.label :customer_name, class:'required' %>
     <%= f.text_field :customername, :placeholder =>'Name' %>
@@ -52,12 +38,17 @@ $(document).ready(function(){
     <%= f.label :city, class:'required' %>
     <%= f.text_field :city, :placeholder =>'City' %>
 
+    <div class="field">
     <%= f.label :Periods, class:'required' %>
     <%= f.number_field :periods, :id => "fixeddeposit_periods", :placeholder => "Days", :class => "input-mini" %>
+    <%= button_tag "FD Details", :type => "button", :onclick => "fetchInterest()" %>
+    </div>
 
-    <%= f.label :Rate_Of_Interest %>
-    <%= f.text_field :rateofinterest, :id => "fixeddeposit_rateofinterest", :value => "", :disabled => true, :class => "input-medium" %>
+    <div class="field">
+    <%= label_tag 'Rate_Of_Interest' %>
+    <%= text_field_tag 'rateofinterest', "", :id => "fixeddeposit_rateofinterest", :disabled => true, :class => "input-medium" %>
     <span class="help-block">auto-generated</span>
+    </div>
 
     <%= f.label :deposit_amount, class:'required' %>
     <%= f.text_field :depositamount, :placeholder =>'0.00' %>
